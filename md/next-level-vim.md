@@ -31,7 +31,7 @@ Use Vimtutor `$ vimtutor` to learn about movement, modes, and running Ex Command
 
 Save a position to the letter 'a' typing 'ma' in Normal mode and type '\`a' in Normal mode to jump back to that position from somewhere else, including from a file elsewhere in your project when using capital letter marks. In order for mark navigation between files to work there can only be one mark of a particular capital letter at a time. List a file's marks with the :marks Ex Command anytime.
 
-Similarly, [ctags](http://ctags.sourceforge.net) are superbly integrated with Vim. Navigate Vim's :help file links with your cursor in position on a link and Ctrl-] to jump to the link's target. In order to generate original ctags for yourself (and make them available within Vim), you will need to install the ctags utility with your operating system package manager (homebrew, apt, or yum etc.).
+For similar jumping power throughout your project, [ctags](http://ctags.sourceforge.net) are superbly integrated with Vim. Navigate Vim's :help file links with your cursor in position on a link and Ctrl-] to jump to the link's target. In order to generate original ctags for yourself (and make them available within Vim), you will need to install the ctags utility with your operating system package manager (homebrew, apt, or yum etc.).
 
 The neat thing about running ctags is that the program links code automatically for you. With ctags generated, place your cursor on a method name and jump to its definition with Ctrl-], (the same key sequence as :help file navigation as defined above). Rerun ctags to regenerate the tags file after heavily editing your project files.
 
