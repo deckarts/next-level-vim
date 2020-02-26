@@ -4,6 +4,8 @@ It is definitely worth the time it takes to learn basic text manipulation with t
 
 Circumstances where you will find it convenient to know Vim nearly always involve tasks running remote shell operations. If you regularly use Secure Shell `$ ssh user@hostname.provider.com` to work Virtual Private Servers (VPS) or in local virtualisation containers then you probably have a plan for bringing your environment preferences along for the ride. You can do so with Vim as well.
 
+## Runtime commands
+
 It is through runtime command files that personalization preference settings can help you to choose Vim for your Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch its legacy compatibility with Vi off. As a superset of Vi, everything in Vi is available in Vim and you get the addition of Vim's advanced features.
 
 ```
@@ -15,9 +17,11 @@ set nocp
 
 Changing the legacy compatibility mode setting to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)), but it's important that it is, in fact, switched off. Notice that "nocp" is Vim shorthand for "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences in Vim. Use .vimrc for default behavior and shorthand to toggle preferences in real time.
 
+## Editor modes
+
 The notion of "modes" is very important to learn about, especially the difference between very distinct "Normal" and "Insert" modes. Confusing modes is what trips up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command mode is so old that it predates the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality in the 1970s.
 
-Important modes
+### Important modes
 * Normal
 * Insert (includes Replace)
 * Visual
@@ -36,7 +40,7 @@ Bleeding edge here...
 
 For marks, ctags, and including your own edit positions you can move back and forth through history with Ctrl-o and Ctrl-i.
 
-Editing history is also remembered. Repeat edit actions with the "." dot key in Normal mode. This is extremely powerful when your last action is a key chord that does something more complex. For far more complex edits record a macro for playback. The dot and macro recording capability rivals anything which looks like magic in other editors.
+Editing history is remembered as a jumplist. You can view the jump list with :ju(mplist) Ex Command. Repeat edit actions with the "." dot key in Normal mode. This is extremely powerful when your last action is a key chord that does something more complex. For far more complex edits record a macro for playback. The dot and macro recording capability rivals anything which looks like magic in other editors.
 
 Visual mode.
 
