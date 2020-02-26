@@ -1,12 +1,12 @@
 # Next Level Vim
 
-It is definitely worth the time it takes to learn basic text manipulation with the ubiquitous Vi(m) command line text editor. If you only know how to open a file and enter text, edit text, and especially how to save edited files and exit the program you will be much better off for it. Count on Vim being readily available in nearly all modern Linux distro (or BSD) terminal emulator shell programs.
+It is definitely worth the time it takes to learn basic text manipulation with the ubiquitous Vi(m) command line text editor. If you only know how to open a file and enter text, edit text, and especially how to save edited files and exit the program you will be much better off for it. Count on Vim being readily available in nearly all modern Linux distribution (or BSD) terminal emulator shell program.
 
-Circumstances where you will find it convenient to know Vim nearly always involve tasks running remote shell operations. If you regularly use Secure Shell `$ ssh user@hostname.provider.com` to work Virtual Private Servers (VPS) or in local virtualisation containers then you probably have a plan for bringing your environment preferences along for the ride. You can do so with Vim as well.
+Circumstances where you will find it convenient to know Vim nearly always involve tasks running remote shell operations. If you regularly use Secure Shell `$ ssh user@hostname.provider.com` to work Virtual Private Servers (VPS) or in local vitalization containers then you probably have a plan for bringing your environment preferences along for the ride. You can do so with Vim as well.
 
-## Runtime commands
+## Run time commands
 
-It is through runtime command files that personalization preference settings can help you to choose Vim for your Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch is its legacy compatibility with Vi mode off. As a superset of Vi, everything in Vi is available in Vim and you get the addition of Vim's greatly enhanced features.
+It is through run time command files that personal preference settings that help you to choose Vim for your Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch is its legacy compatibility with Vi mode off. As a super set of Vi, everything in Vi is available in Vim and you get the addition of Vim's greatly enhanced features.
 
 ```
 " ~/.vimrc 
@@ -15,19 +15,35 @@ It is through runtime command files that personalization preference settings can
 set nocp
 ```
 
-Setting legacy compatibility mode to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)). Vim switches the mode off by implication when it encounters a .vimrc file. It may still be important to switch it off explicitly. The shorthand "nocp" is synonymous with  "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences you can learn to switch Vim preferences as you go.
+Setting legacy compatibility mode to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)). Vim switches the mode off by implication when it encounters a `.vimrc` file. It may still be important to be explicit. The shorthand "nocp" is synonymous with  "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences you can learn to switch Vim preferences as you work.
 
 The notion of "modes" is very important to learn about, especially the difference between very distinct "Normal" and "Insert" modes. Confusing modes is what trips up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command mode is so old that it predates the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality in the 1970s.
 
 ### Important modes
-* Normal
-* Insert (includes Replace)
-* Visual
-* Ex Command (or Last Line)
+* Normal mode
+* Insert mode (includes Replace)
+* Visual mode
+* Command Line, (also Ex Command or Last Line mode)
 
-## Ex marks the spot
+Use Vimtutor `$ vimtutor` to interactively learn about movement, modes, and running Ex Commands in "Last Line" mode. Then the indispensable productivity operators become:
 
-Use Vimtutor `$ vimtutor` to learn about movement, modes, and running Ex Commands in "Last Line" mode. After your tutoring, the next thing to learn about is marks. Marks allow you to associate a cursor's position with a letter key for recall while editing a file. Set your marks with 'm' plus a letter key and then recall the position with a back tick (or single quote mark) and that key.
+. (repeat the last edit action)
+; (repeat the last motion aka movement)
+/ (search document))
+\# (find next occurrence of the word under the cursor)
+~ (toggle case)
+% (toggle opening and closing parentheses (), brackets [], and curly braces {})
+
+### Use inner word
+
+Inner word editing actions like "ciw" for "change inner word" allows you to position your cursor anywhere within a word, quotes, parentheses, or brackets to affect change to the whole word or words within the construct. This lessens the burden of placing your cursor at the first character. A serious valuable side effect is dot repeat actions also work regardless where your cursor position is.
+
+\z= (spelling suggestions)
+
+Splitting the terminal window
+Ctrl-w (window commands)
+
+After your tutoring, the next thing to learn about is marks. Marks allow you to associate a cursor's position with a letter key for recall while editing a file. Set your marks with 'm' plus a letter key and then recall the position with a back tick (or single quote mark) and that key.
 
 Save a position to the letter 'a' typing 'ma' in Normal mode and type '\`a' in Normal mode to jump back to that position from somewhere else, including from a file elsewhere in your project when using capital letter marks. In order for mark navigation between files to work there can only be one mark of a particular capital letter at a time. List a file's marks with the :marks Ex Command anytime.
 
