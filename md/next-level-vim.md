@@ -28,11 +28,17 @@ The notion of "modes" is very important to learn about, especially the differenc
 Use Vimtutor `$ vimtutor` to interactively learn about movement, modes, and running Ex Commands in "Last Line" mode. Then the indispensable productivity operators become:
 
 . (repeat the last edit action)
-; (repeat the last motion aka movement)
-/ (search document))
-\# (find next occurrence of the word under the cursor)
+; (repeat the last motion or movement forward, use "," for backwards)
+/ (search document forwards, use "?" for backward)
+\* (find next occurrence of the word under the cursor, use "#" for previous occurrence)
 ~ (toggle case)
-% (toggle opening and closing parentheses (), brackets [], and curly braces {})
+% (toggle between opening and closing (), [], and {} which is highly useful for code)
+
+wrap
+
+paste
+
+indent
 
 ### Use inner word
 
@@ -40,14 +46,15 @@ Inner word editing actions like "ciw" for "change inner word" allows you to posi
 
 \z= (spelling suggestions)
 
-Splitting the terminal window
+tabs and splits
+
 Ctrl-w (window commands)
 
 After your tutoring, the next thing to learn about is marks. Marks allow you to associate a cursor's position with a letter key for recall while editing a file. Set your marks with 'm' plus a letter key and then recall the position with a back tick (or single quote mark) and that key.
 
 Save a position to the letter 'a' typing 'ma' in Normal mode and type '\`a' in Normal mode to jump back to that position from somewhere else, including from a file elsewhere in your project when using capital letter marks. In order for mark navigation between files to work there can only be one mark of a particular capital letter at a time. List a file's marks with the :marks Ex Command anytime.
 
-## On your marks, get ctags
+## Marks and ctags
 
 For similar jumping power throughout your project, [ctags](http://ctags.sourceforge.net) are superbly integrated with Vim. Navigate Vim's :help file links with your cursor in position on a link and Ctrl-] to jump to the link's target. In order to generate original ctags for yourself (and make them available within Vim), you will need to install the ctags utility with your operating system package manager (homebrew, apt, or yum etc.).
 
@@ -61,16 +68,7 @@ Editing history is remembered as a jumplist. You can view the jump list with :ju
 
 Visual mode.
 
-tabs and splits
+Registers (Vim's clipboard)
 
-semicolon to next 
-
-search
 search and replace
 perldo for regular expressions
-
-wrap
-
-paste
-
-indent
