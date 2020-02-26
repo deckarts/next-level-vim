@@ -6,7 +6,7 @@ Circumstances where you will find it convenient to know Vim nearly always involv
 
 ## Runtime commands
 
-It is through runtime command files that personalization preference settings can help you to choose Vim for your Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch its legacy compatibility with Vi off. As a superset of Vi, everything in Vi is available in Vim and you get the addition of Vim's advanced features.
+It is through runtime command files that personalization preference settings can help you to choose Vim for your Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch is its legacy compatibility with Vi mode off. As a superset of Vi, everything in Vi is available in Vim and you get the addition of Vim's greatly enhanced features.
 
 ```
 " ~/.vimrc 
@@ -15,7 +15,7 @@ It is through runtime command files that personalization preference settings can
 set nocp
 ```
 
-Changing the legacy compatibility mode setting to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)), but it's important that it is, in fact, switched off. Notice that "nocp" is Vim shorthand for "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences in Vim. Use .vimrc for default behavior and shorthand to toggle preferences in real time.
+Setting the legacy compatibility mode off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)). With a .vimrc file the mode is switched off by implication, but it may be important to switch it off explicitly. Notice that "nocp" is Vim shorthand for "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences in Vim. Use .vimrc for default behavior and shorthand to toggle preferences in real time.
 
 ## Editor modes
 
