@@ -37,7 +37,7 @@ Important modes
 * Visual
 * Ex (or Last Line)
 
-The notion of "modes" is very important to learn about with Vim, especially the difference between the very distinct "Normal" and "Insert" modes. Confusing Vim's modes are what will trip up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command modes were necessary for the invention of [copy and paste](https://one.npr.org/i/808404858:808404859) functionality.
+The notion of "modes" is very important to learn about with Vim, especially the difference between the very distinct "Normal" and "Insert" modes. Confusing Vim's modes are what will trip up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command modes were necessary for the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality.
 
 Use Vimtutor to learn about modes and running ex commands in "Last Line" mode. After your tutoring the next thing to learn about is marks. Marks allow you to associate a cursor's position with a letter key for later recall. Set your marks with ‘m' plus a key and then recall it with a back tick (or single quote mark) and that key.
 
