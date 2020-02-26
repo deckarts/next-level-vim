@@ -1,10 +1,10 @@
 # Next Level Vim
 
-It is definitely worth the time it takes to learn basic text manipulation with the ubiquitous Vi command line text editor. If you only know how to open a file and enter text, edit text, and especially how to save edited files and exit the program you will be much better off for it. Count on Vi being readily available in nearly all modern Linux distro (or BSD) terminal emulator shells.
+It is definitely worth the time it takes to learn basic text manipulation with the ubiquitous Vi(m) command line text editor. If you only know how to open a file and enter text, edit text, and especially how to save edited files and exit the program you will be much better off for it. Count on Vim being readily available in nearly all modern Linux distro (or BSD) terminal emulator shells.
 
-More powerful than Vi is knowing Vim (Vi "improved") to any level of mastery. Vim and the excellent Vimtutor programs are usually available at the command prompt as present in your shell PATH variable. Type "echo $PATH" and see. If not, make sure Vim is installed in the first place, which also installs Vimtutor. Make sure the executable binary location is in your PATH and use the "export" utility if not.
+Vim (Vi "improved") and the excellent Vimtutor programs are often readily available at the command prompt through your default shell PATH variable. Type "echo $PATH" and see. If not, make sure Vim is installed in the first place or install it (which also installs Vimtutor). Make sure the executable binary location is in your PATH and utilize the "export" built-in utility if not.
 
-Circumstances where you will find it convenient to know Vi(m) nearly always involve tasks running remote shell operations. If you regularly use Secure Shell ($ ssh) to work on a Virtual Private Server (VPS) or in a local virtualisation container then you should bring your preferences along for the ride. Edit your shell "runtime commands" file (~/.bashrc) for the export statement and so that edits default to Vim:
+Circumstances where you will find it convenient to know Vim nearly always involve tasks running remote shell operations. If you regularly use Secure Shell ($ ssh) to work on a Virtual Private Server (VPS) or in a local virtualisation container then you should bring your preferences along for the ride. Edit your shell "runtime commands" file (~/.bashrc) for the export statement and so that your editing default to Vim:
 
 ```
 # ~/.bashrc (or alternatively) ~/.bash_profile
@@ -12,7 +12,7 @@ Circumstances where you will find it convenient to know Vi(m) nearly always invo
 export EDITOR=vim
 ```
 
-Apple's Darwin (FreeBSD) recently switched default terminal emulator shell from bash to zsh "Z" shell):
+Apple's Darwin (FreeBSD) recently switched terminal emulator shells from bash to zsh "Z" shell):
 
 ```
 #  ~/.zshrc (or alternatively) ~/.zprofile
@@ -20,7 +20,7 @@ Apple's Darwin (FreeBSD) recently switched default terminal emulator shell from 
 export EDITOR=vim
 ```
 
-It is through these files that personalization preferences with Vim become appealing as a choice for your Integrated Development Environment (IDE). A newly installed Vim may be limited to backward compatibility with legacy Vi. The first actual Vim setting you're likely going to want is to switch is its legacy compatibility with Vi. That way, you are sure to have access to Vim's advanced features:
+It is through these files that personalization preferences with Vim become appealing as a choice for your Integrated Development Environment (IDE). A newly installed Vim may be limited to backward compatibility with legacy Vi. The first actual Vim setting you're likely going to want is switch its legacy compatibility with Vi off. That way, you are sure to have access to Vim's advanced features:
 
 ```
 " ~/.vimrc 
@@ -29,25 +29,25 @@ It is through these files that personalization preferences with Vim become appea
 set nocp
 ```
 
-Vi has limitations that your copy of Vim will now bypass in favor of its advanced features. Changing the setting might not seem like it's doing anything ([in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)), but it's important that legacy mode is, in fact, switched off. Think of "nocp" as Vim shorthand for "nocompatible," which also works.
+As a superset, everything available in Vi is available in Vim. Vim adds advanced features that you're going to want. Changing the legacy compatibility mode setting to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)), but it's important that it is, in fact, switched off. Take notice that "nocp" is Vim shorthand for "nocompatible," which also works. There are many shorthand conveniences in Vim.
+
+The notion of "modes" is very important to learn about, especially the difference between very distinct "Normal" and "Insert" modes. Confusing modes is what trips up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command modes predate the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality in the 1970s.
 
 Important modes
 * Normal
 * Insert (includes Replace)
 * Visual
-* Ex (or Last Line)
+* Ex Command (or Last Line)
 
-The notion of "modes" is very important to learn about with Vim, especially the difference between the very distinct "Normal" and "Insert" modes. Confusing Vim's modes are what will trip up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command modes predate the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality in the 1970s.
+Use Vimtutor to learn about modes and for running ex commands in "Last Line" mode. After your tutoring, the next thing to learn about is marks. Marks allow you to associate a cursor's position with a letter key for later recall. Set your marks with 'm' plus a key and then recall it with a back tick (or single quote mark) and that key.
 
-Use Vimtutor to learn about modes and running ex commands in "Last Line" mode. After your tutoring the next thing to learn about is marks. Marks allow you to associate a cursor's position with a letter key for later recall. Set your marks with ‘m' plus a key and then recall it with a back tick (or single quote mark) and that key.
-
-Save a position to the letter ‘a' typing ‘ma' in Normal mode and type ‘\`a' in Normal mode to jump back to that position from somewhere else, including files elsewhere in your project. If a mark doesn't seem to work chances are that you've removed the text delineating that mark position. Just get started marking and list your marks with :marks anytime you want.
+Save a position to the letter 'a' typing 'ma' in Normal mode and type '\`a' in Normal mode to jump back to that position from somewhere else, including from a file elsewhere in your project. If a mark doesn't seem to work chances are that you've removed the text delineating that mark position. Just get started and list your marks with :marks anytime you want.
 
 Tip: I like to save the (number) letter 1 to my latest progress point. The 1 key is nearby back tick for easy recall.
 
-Similarly, [ctags](http://ctags.sourceforge.net) are superbly integrated with Vim. Navigate Vim's :help file links with your cursor in position and Ctrl-]. To generate original ctags for yourself (and make them available within Vim), you will need to install the ctags utility with your operating system package manager (homebrew, apt, or yum etc.).
+Similarly, [ctags](http://ctags.sourceforge.net) are superbly integrated with Vim. Navigate Vim's :help file links with your cursor in position and Ctrl-] to jump to the link target. In order to generate original ctags for yourself (and make them available within Vim), you will need to install the ctags utility with your operating system package manager (homebrew, apt, or yum etc.).
 
-The neat thing about running ctags is that it links code automatically for you automatically. With ctags generated, place your cursor on a method name and jump to its definition with Ctrl-], (the same key sequence as :help file navigation). Rerun ctags to regenerate the tags file after heavily editing your project files.
+The neat thing about running ctags is that it links code automatically for you. With ctags generated, place your cursor on a method name and jump to its definition with Ctrl-], (the same key sequence as :help file navigation as defined above). Rerun ctags to regenerate the tags file after heavily editing your project files.
 
 For marks, ctags, and including your own edit positions you can move back and forth through history with Ctrl-o and Ctrl-i.
 
