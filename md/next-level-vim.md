@@ -15,9 +15,7 @@ It is through runtime command files that personalization preference settings can
 set nocp
 ```
 
-Setting the legacy compatibility mode off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)). With a .vimrc file the mode is switched off by implication, but it may be important to switch it off explicitly. Notice that "nocp" is Vim shorthand for "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences in Vim. Use .vimrc for default behavior and shorthand to toggle preferences in real time.
-
-## Editor modes
+Setting legacy compatibility mode to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)). Vim switches the mode off by implication when it encounters a .vimrc file. It may still be important to switch it off explicitly. The shorthand "nocp" is synonymous with  "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences you can learn to switch Vim preferences as you go.
 
 The notion of "modes" is very important to learn about, especially the difference between very distinct "Normal" and "Insert" modes. Confusing modes is what trips up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command mode is so old that it predates the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality in the 1970s.
 
@@ -27,14 +25,17 @@ The notion of "modes" is very important to learn about, especially the differenc
 * Visual
 * Ex Command (or Last Line)
 
+## Ex marks the spot
+
 Use Vimtutor `$ vimtutor` to learn about movement, modes, and running Ex Commands in "Last Line" mode. After your tutoring, the next thing to learn about is marks. Marks allow you to associate a cursor's position with a letter key for recall while editing a file. Set your marks with 'm' plus a letter key and then recall the position with a back tick (or single quote mark) and that key.
 
 Save a position to the letter 'a' typing 'ma' in Normal mode and type '\`a' in Normal mode to jump back to that position from somewhere else, including from a file elsewhere in your project when using capital letter marks. In order for mark navigation between files to work there can only be one mark of a particular capital letter at a time. List a file's marks with the :marks Ex Command anytime.
 
+## On your marks, get ctags
+
 For similar jumping power throughout your project, [ctags](http://ctags.sourceforge.net) are superbly integrated with Vim. Navigate Vim's :help file links with your cursor in position on a link and Ctrl-] to jump to the link's target. In order to generate original ctags for yourself (and make them available within Vim), you will need to install the ctags utility with your operating system package manager (homebrew, apt, or yum etc.).
 
 The neat thing about running ctags is that the program links code automatically for you. With ctags generated, place your cursor on a method name and jump to its definition with Ctrl-], (the same key sequence as :help file navigation as defined above). Rerun ctags to regenerate the tags file after heavily editing your project files.
-
 
 Bleeding edge here...
 
