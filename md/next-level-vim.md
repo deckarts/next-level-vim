@@ -6,7 +6,7 @@ Circumstances where you will find it convenient to know Vim nearly always involv
 
 ## Run time commands
 
-It is through run time command files that your personal preference settings help you to configure bash and Vim to create a veritable Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch is its legacy compatibility with Vi mode off. As a super set of Vi, everything in Vi is available in Vim and you get the addition of Vim's greatly enhanced features.
+It is through run time command files that your personal preference settings help you to configure bash and Vim to create a veritable Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch its legacy compatibility (with Vi) mode off. As a super set, everything in Vi is available or improved in Vim and you get more advanced features.
 
 ```
 " ~/.vimrc 
@@ -15,9 +15,9 @@ It is through run time command files that your personal preference settings help
 set nocp
 ```
 
-Setting legacy compatibility mode to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)). Vim switches the mode off by implication when it encounters a `.vimrc` file. It may still be important to be explicit. The shorthand "nocp" is synonymous with  "nocompatible," which also works. There are many "[TIMTOWTDI](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences you can learn to switch Vim preferences as you work.
+Setting legacy compatibility mode to off might not seem like it's doing anything ([and in fact it might not be doing anything](http://vimdoc.sourceforge.net/htmldoc/starting.html#compatible-default)). Vim switches the mode off by implication when it encounters a `.vimrc` file. It may still be important to be explicit. The shorthand "nocp" is synonymous with  "nocompatible," which also works. There are many "[timtowtdi](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it)" conveniences you can learn for switching preferences as you work.
 
-The notion of "modes" is very important to learn about, especially the difference between very distinct "Normal" and "Insert" modes. Confusing modes is what trips up most new users. Modes aren't unique to Vim, nor were they introduced by Vi. Command mode is so old that it predates the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality in the 1970s.
+The notion of Vim's "modes" is very important to learn about, especially the difference between the very distinct "Normal" and "Insert" modes. Confusion about modes is what trips up most new users. Modes aren't unique to Vim nor were they introduced by Vi. Command mode is so old that it predates the invention of [copy and paste](https://www.npr.org/2020/02/22/808404858/remembering-the-pioneer-behind-your-computers-cut-copy-and-paste-functions) functionality in the 1970s.
 
 ### Important modes
 * Normal mode
@@ -28,11 +28,26 @@ The notion of "modes" is very important to learn about, especially the differenc
 Use Vimtutor `$ vimtutor` to interactively learn about movement, modes, and running Ex Commands in "Last Line" mode. Then the indispensable productivity operators become:
 
 . (repeat the last edit action)
+
 ; (repeat the last motion or movement forward, use "," for backwards)
+
 / (search document forwards, use "?" for backward)
+
 \* (find next occurrence of the word under the cursor, use "#" for previous occurrence)
+
 ~ (toggle case)
+
 % (toggle between opening and closing (), [], and {} which is highly useful for code)
+
+While it's important to commit the operator language of Vim to memory, the challenge is to learn to think like a musician and combine them into key chords so you can play Vim like a piano. That's where there's true power which rivals any modern programmer editor. Plan your edits strategically by mind-mapping rare characters in relation to your cursor position to use motion sequences and accomplish larger edits.
+
+It is common to edit enclosed text wrapped in (single or double) quotes, parentheses, square brackets, or curly braces. You can change or delete the inner text all at once with "ci(" for parentheses etc. Simply match the construct you are dealing with as the last key in your chord. The obvious implication of this is how you can use it to edit code. Just watch out for strings which escape matching special characters.
+
+Using repeat actions is very productive. You can repeat forward motions with the semicolon which works in Visual mode as we.. To select or edit several sentences you can type "v" for visual first followed by "f." and as many semicolons as required. Once everything you want to change is selected, hit the "c" key to have it deleted and get you into Insert mode.
+
+It is also common to delete words with "dw" which can get tedious if you have a way to go and haven't counted the words. Find a boundary and delete, using the dot "." repeat edit action until you've reached the point you want.
+
+this (woo hoo) set of text
 
 wrap
 
