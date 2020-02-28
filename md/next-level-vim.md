@@ -1,12 +1,12 @@
 # Next Level Vim
 
-It is definitely worth the time it takes to learn basic text manipulation with the ubiquitous Vi(m) command line text editor. If you only know how to open a file and enter text, edit text, and especially how to save edited files and exit the program you will be much better off for it. Count on Vim being readily available in nearly all modern Linux distribution (or BSD) terminal emulator shell program.
+It is definitely worth the time it takes to learn text manipulation with the ubiquitous Vi(m) command line text editor. If you only know how to open a file and enter text, edit some text, and especially how to save edited files and exit the program you will be much better off for it. Vim is readily available in nearly all modern Linux distribution (or BSD) terminal emulator shell programs.
 
-Circumstances where you will find it convenient to know Vim nearly always involve tasks running remote shell operations. If you regularly use Secure Shell `$ ssh user@hostname.provider.com` to work Virtual Private Servers (VPS) or in local vitalization containers then you probably have a plan for bringing your environment preferences along for the ride. You can do so with Vim as well.
+Circumstances where you will find it convenient to know Vim nearly always involve tasks running remote shell operations. If you regularly use Secure Shell `$ ssh user@hostname.provider.com` to work with Virtual Private Servers (VPS) or with local vitalization containers then you probably would like to bring along your environment preferences. You can that with Vim also.
 
 ## Run time commands
 
-It is through run time command files that personal preference settings that help you to choose Vim for your Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch is its legacy compatibility with Vi mode off. As a super set of Vi, everything in Vi is available in Vim and you get the addition of Vim's greatly enhanced features.
+It is through run time command files that your personal preference settings help you to configure bash and Vim to create a veritable Integrated Development Environment (IDE). The first actual Vim setting you're likely going to want is to switch is its legacy compatibility with Vi mode off. As a super set of Vi, everything in Vi is available in Vim and you get the addition of Vim's greatly enhanced features.
 
 ```
 " ~/.vimrc 
